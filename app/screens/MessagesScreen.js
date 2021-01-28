@@ -5,7 +5,7 @@ import ListItemDeleteAction from '../components/ListItemDeleteAction';
 import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
 
-const messages = [
+const initialMessages = [
   {
     id: 1,
     title: 'T1',
@@ -20,8 +20,10 @@ const messages = [
   },
 ];
 function MessagesScreen(props) {
+  const [messages, setMessages] = useState(initialMessages);
+
   const handleDelete = (message) => {
-    // Delete the message from messages
+    setMessages(messages.filter((m) => m.id !== message.id));
   };
 
   return (
@@ -36,7 +38,7 @@ function MessagesScreen(props) {
             image={item.image}
             onPress={() => console.log('Message selected', item)}
             renderRightActions={() => (
-              <ListItemDeleteAction onPress={() => console.log(item)} />
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
           />
         )}
