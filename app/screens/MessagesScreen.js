@@ -9,7 +9,8 @@ const initialMessages = [
   {
     id: 1,
     title: 'T1',
-    description: 'D1',
+    description:
+      'Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text',
     image: require('../assets/chuck.jpg'),
   },
   {
