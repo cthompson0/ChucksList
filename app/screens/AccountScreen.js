@@ -41,6 +41,7 @@ function AccountScreen(props) {
             renderItem={({ item }) => (
               <ListItem
                 title={item.title}
+                showChevrons
                 IconComponent={
                   <Icon
                     name={item.icon.name}
@@ -53,6 +54,7 @@ function AccountScreen(props) {
         </View>
         <ListItem
           title="Log Out"
+          showChevrons
           IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
         />
       </View>
