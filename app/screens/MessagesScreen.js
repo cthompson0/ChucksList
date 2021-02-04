@@ -8,23 +8,25 @@ import Screen from '../components/Screen';
 const initialMessages = [
   {
     id: 1,
-    title: 'T1',
-    description:
-      'Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text. Hello this a very long test text message to test the length of the text',
+    title: 'Chuck Thompson',
+    description: 'Hello, is the item still available?',
     image: require('../assets/chuck.jpg'),
   },
   {
     id: 2,
-    title: 'T2',
-    description: 'D2',
+    title: 'Chuck Thompson',
+    description:
+      'Hi. I am still very interested in the item you have for sale.',
     image: require('../assets/chuck.jpg'),
   },
 ];
+
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
+    // Delete the message from messages
     setMessages(messages.filter((m) => m.id !== message.id));
   };
 
