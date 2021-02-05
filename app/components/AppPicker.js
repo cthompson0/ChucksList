@@ -17,7 +17,9 @@ import PickerItem from './PickerItem';
 function AppPicker({
   icon,
   items,
+  numberOfColumns = 1,
   onSelectItem,
+  PickerItemComponent = PickerItem,
   placeholder,
   selectedItem,
   width = '100%',
@@ -53,9 +55,11 @@ function AppPicker({
           <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
+            numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
+                item={item}
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);
@@ -78,15 +82,15 @@ const styles = StyleSheet.create({
     padding: 15,
     marginVertical: 10,
   },
+  icon: {
+    marginRight: 10,
+  },
   placeholder: {
     color: defaultStyles.colors.medium,
     flex: 1,
   },
   text: {
     flex: 1,
-  },
-  icon: {
-    marginRight: 10,
   },
 });
 
